@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ecommerce';
+  title = 'Ecommerce';
 
   constructor(private router : Router){}
 
   // function untuk menampilkan alert ketika html memanggil (click)="page1" di button sebagau pengganti href
-  page1(){
-    this.router.navigate(['hal1'])
+  home(){
+    this.router.navigate(['home'])
     // alert("hello This is Page 1")
   }
   page2(){

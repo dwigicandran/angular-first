@@ -1,0 +1,21 @@
+<h1>List Item</h1>
+
+<div class="mt-4">
+    <button type="button" class="btn btn-success" (click)="addItem()">Add New Item</button>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4 mb-3" *ngFor="let item of items">
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <img src="../../assets/profile1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.name}}Ini Nama Barang</h5>
+                  <p class="card-text">{{item.harga}}Rp 20.000</p>
+                  <p class="card-text">{{item.terjual}}</p>
+                </div>
+                <div class="card-body text-right">
+                    <button type="button" class="btn btn-primary btn-sm">Check Detail</button>
+                </div>
+              </div>
+    </div>
+</div>

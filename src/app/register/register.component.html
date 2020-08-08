@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="col-md-11">
+        <div class="card card-container mb-5">
+            <div class="card-header text-center">
+                <h4>Register</h4>
+            </div>
+
+            <div class="card-body">
+                <form class="register-form" [formGroup]="formGroup" (ngSubmit)="register()">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" formControlName="username" [ngClass]="{'is-invalid': formGroup.get('username').touched && formGroup.get('username').invalid}">
+                          <div class="invalid-feedback">
+                            <small id="username" class="form-text text-danger">Username is required!</small>
+                            <small id="username" class="form-text text-danger">Username min lenght is 6 character !</small>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" class="form-control" id="fullname" formControlName="fullname" [ngClass]="{'is-invalid': formGroup.get('fullname').touched && formGroup.get('fullname').invalid}">
+                          <div class="invalid-feedback">
+                            <small id="fullname" class="form-text text-danger">Full name is required!</small>
+                          </div>
+                      </div>
+                    <div class="form-group">
+                      <label for="email">Email address</label>
+                      <input type="email" class="form-control" id="email" formControlName="email" [ngClass]="{'is-invalid': formGroup.get('email').touched && formGroup.get('email').invalid}">
+                        <div class="invalid-feedback">
+                          <small id="email" class="form-text text-danger">Email is required!</small>
+                          <small id="email" class="form-text text-danger">Enter the valid email!</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" id="password" formControlName="password" [ngClass]="{'is-invalid': formGroup.get('password').touched && formGroup.get('password').invalid}">
+                        <div class="invalid-feedback">
+                          <small id="password" class="form-text text-danger">Password is required!</small>
+                          <small id="username" class="form-text text-danger">Password min lenght is 4 character !</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select class="form-control" formControlName="role" [ngClass]="{'is-invalid': formGroup.get('role').touched && formGroup.get('role').invalid}">
+                          <option value="admin">admin</option>
+                          <option value="user">user</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          <small id="role" class="form-text text-danger">role is required!</small>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-control">
+                          <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="active" formControlName="active" [ngClass]="{'is-invalid': formGroup.get('role').touched && formGroup.get('role').invalid}">
+                            <label class="form-check-label" for="active">Active</label>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="mt-5">
+                        <button type="submit" class="btn btn-outline-primary btn-block" [disabled]="!formGroup.valid">Sing up</button> 
+                    </div>
+                  </form>
+            </div>
+
+            <div class="card-footer text-center">
+                <div class="mt-1">
+                    <small>Have a Account ? </small> 
+                    <button type="button" class="btn btn-link" (click)="login()">Login Here!</button>
+                </div>
+            </div>
+      </div>
+    </div>
+</div>
+    

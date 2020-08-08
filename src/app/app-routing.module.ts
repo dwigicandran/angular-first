@@ -1,14 +1,23 @@
+import { AddItemComponent } from './home/add-item/add-item.component';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './_guard/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Halaman1Component } from './halaman1/halaman1.component';
 import { Halaman2Component } from './halaman2/halaman2.component';
 import { Halaman3Component } from './halaman3/halaman3.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
-    path: "hal1",
-    component: Halaman1Component
+    path: "home",
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "addItem",
+    component: AddItemComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "",
@@ -16,11 +25,17 @@ const routes: Routes = [
   },
   {
     path: "hal2",
-    component: Halaman2Component
+    component: Halaman2Component,
+    canActivate: [AuthGuard]
   },
   {
     path: "hal3",
-    component: Halaman3Component
+    component: Halaman3Component,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "register",
+    component: RegisterComponent
   }
 ];
 
