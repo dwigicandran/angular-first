@@ -8,11 +8,11 @@
             <div class="card-body">
                 <form class="addItem-form" [formGroup]="formGroup" (ngSubmit)="addItem()">
                     <div class="form-group">
-                        <label for="name">Nama Barang</label>
-                        <input type="text" class="form-control" id="name" formControlName="name" [ngClass]="{'is-invalid': formGroup.get('name').touched && formGroup.get('name').invalid}">
+                        <label for="nama">Nama Barang</label>
+                        <input type="text" class="form-control" id="nama" formControlName="nama" [ngClass]="{'is-invalid': formGroup.get('nama').touched && formGroup.get('nama').invalid}">
                           <div class="invalid-feedback">
-                            <small id="name" class="form-text text-danger">Name is required!</small>
-                            <small id="name" class="form-text text-danger">Name min lenght is 6 character !</small>
+                            <small id="nama" class="form-text text-danger">Name is required!</small>
+                            <small id="nama" class="form-text text-danger">Name min lenght is 6 character !</small>
                           </div>
                       </div>
                       <div class="form-group">

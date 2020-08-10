@@ -1,1 +1,23 @@
-<p>detail-item works!</p>
+<h2>Item Details</h2> 
+
+<div class="card m-3"  *ngIf="item">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="../../assets/profile1.jpg" class="card-img">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body">
+        <h5 class="card-title"> Title : {{item.nama}}</h5>
+        <h6 class="card-title text-muted"> Stock : {{item.stock}}</h6>
+        <h6 class="card-text">Harga : {{item.harga}}</h6>
+        <p class="card-text">{{item.description}}.</p>
+        <h6 class="card-text">Terjual : {{item.terjual}}</h6>
+        <h6 class="card-text">Berat : {{item.berat}}</h6>
+        <div class="card-body">
+          <button type="button" class="btn btn-info" style="width: 100px; height: 50px;">Edit</button>
+          <button type="button" class="btn btn-danger float-right" style="width: 100px; height: 50px;">Delete</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ItemService {
+  
 
   constructor(private http:HttpClient) { }
 
@@ -18,5 +19,9 @@ export class ItemService {
   addNewItem(data):Observable<any>{
     console.log("i am server")
     return this.http.post(`${ baseUrl }item`,data);
+  }
+
+  getItemById(id: string): Observable<any>{
+    return this.http.get(`${ baseUrl }item/ById?id=${id}`)
   }
 }

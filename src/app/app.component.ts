@@ -1,3 +1,4 @@
+import { AuthService } from './_services/auth.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Ecommerce';
 
-  constructor(private router : Router){}
+  constructor(private router : Router,private authService: AuthService){}
 
   // function untuk menampilkan alert ketika html memanggil (click)="page1" di button sebagau pengganti href
   home(){
@@ -27,6 +28,12 @@ export class AppComponent {
   page(){
     this.router.navigate([''])
     // alert("hello This is Page 3")
+  }
+  logout(){
+    return this.authService.logout()
+  }
+  loggedIn(){
+    return this.authService.loggedin()
   }
 }
 

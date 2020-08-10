@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { baseUrl } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   login(data):Observable<any>{
     console.log("i am server")
@@ -22,6 +23,11 @@ export class AuthService {
 
   loggedin(){
     return !!localStorage.getItem('token')
+  }
+
+  logout(){
+    localStorage.removeItem('token')
+    this.router.navigate([''])
   }
 
   getToken (){

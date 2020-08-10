@@ -1,3 +1,4 @@
+import { DetailItemComponent } from './home/detail-item/detail-item.component';
 import { AddItemComponent } from './home/add-item/add-item.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
@@ -17,6 +18,11 @@ const routes: Routes = [
   {
     path: "addItem",
     component: AddItemComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "detailItem/:id",
+    component: DetailItemComponent,
     canActivate: [AuthGuard]
   },
   {

@@ -18,7 +18,7 @@ export class AddItemComponent implements OnInit {
   }
   initForm() {
     this.formGroup = new FormGroup({
-      name: new FormControl('',[Validators.required,Validators.minLength(6)]),
+      nama: new FormControl('',[Validators.required,Validators.minLength(6)]),
       stock: new FormControl('',[Validators.required]),
       harga: new FormControl('',[Validators.required,Validators.minLength(3)]),
       description: new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(140)]),

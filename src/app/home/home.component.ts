@@ -23,5 +23,8 @@ export class HomeComponent implements OnInit {
   addItem(){
     this.router.navigate(['/addItem'])
   }
+  detailItem(id: string){
+    this.router.navigate(['detailItem', id]);
+  }
 
 }

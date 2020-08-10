@@ -9,12 +9,12 @@
         <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                 <img src="../../assets/profile1.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">{{item.name}}Ini Nama Barang</h5>
-                  <p class="card-text">{{item.harga}}Rp 20.000</p>
-                  <p class="card-text">{{item.terjual}}</p>
+                  <h5 class="card-title">{{item.nama}}</h5>
+                  <p class="card-text">Rp {{item.harga}}</p>
+                  <p class="card-text">terjual {{item.terjual}}</p>
                 </div>
                 <div class="card-body text-right">
-                    <button type="button" class="btn btn-primary btn-sm">Check Detail</button>
+                    <button type="button" class="btn btn-primary btn-sm" (click)="detailItem(item.id)">Check Detail</button>
                 </div>
               </div>
     </div>
