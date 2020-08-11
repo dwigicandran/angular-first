@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { Halaman2Component } from './halaman2/halaman2.component';
 import { Halaman3Component } from './halaman3/halaman3.component';
 import { LoginComponent } from './login/login.component';
+import { EditItemComponent } from './home/edit-item/edit-item.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: "detailItem/:id",
     component: DetailItemComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "editItem/:id",
+    component: EditItemComponent,
     canActivate: [AuthGuard]
   },
   {

@@ -2,14 +2,17 @@
     <div class="col-md-11">
         <div class="card card-container mb-5">
             <div class="card-header text-center">
-                <h4>Add Item</h4>
+                <h4>Edit Item</h4>
             </div>
 
-            <div class="card-body">
-                <form class="addItem-form" [formGroup]="formGroup" (ngSubmit)="addItem()">
+            <div class="card-body" *ngIf="item">
+                <form class="addItem-form" [formGroup]="formGroup" (ngSubmit)="editItem()">
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" id="id" value="{{item.id}}">
+                      </div>
                     <div class="form-group">
                         <label for="nama">Nama Barang</label>
-                        <input type="text" class="form-control" id="nama" formControlName="nama" [ngClass]="{'is-invalid': formGroup.get('nama').touched && formGroup.get('nama').invalid}">
+                        <input type="text" class="form-control" id="nama" value="{{item.nama}}" formControlName="nama" [ngClass]="{'is-invalid': formGroup.get('nama').touched && formGroup.get('nama').invalid}">
                           <div class="invalid-feedback">
                             <small id="nama" class="form-text text-danger">Name is required!</small>
                             <small id="nama" class="form-text text-danger">Name min lenght is 6 character !</small>
@@ -17,14 +20,14 @@
                       </div>
                       <div class="form-group">
                         <label for="stock">Stock Barang</label>
-                        <input type="number" class="form-control" id="stock" formControlName="stock" [ngClass]="{'is-invalid': formGroup.get('stock').touched && formGroup.get('stock').invalid}">
+                        <input type="number" class="form-control" id="stock" value="{{item.stock}}" formControlName="stock" [ngClass]="{'is-invalid': formGroup.get('stock').touched && formGroup.get('stock').invalid}">
                           <div class="invalid-feedback">
                             <small id="stock" class="form-text text-danger">Stock is required!</small>
                           </div>
                       </div>
                     <div class="form-group">
                       <label for="harga">Harga Barang</label>
-                      <input type="number" class="form-control" id="harga" formControlName="harga" [ngClass]="{'is-invalid': formGroup.get('harga').touched && formGroup.get('harga').invalid}">
+                      <input type="number" class="form-control" id="harga" value="{{item.harga}}" formControlName="harga" [ngClass]="{'is-invalid': formGroup.get('harga').touched && formGroup.get('harga').invalid}">
                         <div class="invalid-feedback">
                           <small id="harga" class="form-text text-danger">Harga is required!</small>
                           <small id="harga" class="form-text text-danger">Harga min lenght is 3 character!</small>
@@ -33,7 +36,7 @@
 
                     <div class="form-group">
                         <label for="description">Deskripsi Barang</label>
-                        <textarea class="form-control" id="description" rows="3" formControlName="description" [ngClass]="{'is-invalid': formGroup.get('description').touched && formGroup.get('description').invalid}"></textarea>
+                        <textarea class="form-control" id="description" rows="3" value="{{item.description}}" formControlName="description" [ngClass]="{'is-invalid': formGroup.get('description').touched && formGroup.get('description').invalid}"></textarea>
                         <div class="invalid-feedback">
                             <small id="description" class="form-text text-danger">description is required!</small>
                             <small id="description" class="form-text text-danger">description min lenght is 10 character !</small>
@@ -41,20 +44,20 @@
                       </div>
                     <div class="form-group">
                         <label for="terjual">Barang Terjual</label>
-                        <input type="number" class="form-control" id="terjual" formControlName="terjual" [ngClass]="{'is-invalid': formGroup.get('terjual').touched && formGroup.get('terjual').invalid}">
+                        <input type="number" class="form-control" id="terjual" value="{{item.terjual}}" formControlName="terjual" [ngClass]="{'is-invalid': formGroup.get('terjual').touched && formGroup.get('terjual').invalid}">
                           <div class="invalid-feedback">
                             <small id="terjual" class="form-text text-danger">terjual is required!</small>
                           </div>
                       </div>
                       <div class="form-group">
                         <label for="berat">Berat Barang</label>
-                        <input type="number" class="form-control" id="berat" formControlName="berat" [ngClass]="{'is-invalid': formGroup.get('berat').touched && formGroup.get('berat').invalid}">
+                        <input type="number" class="form-control" id="berat" value="{{item.berat}}" formControlName="berat" [ngClass]="{'is-invalid': formGroup.get('berat').touched && formGroup.get('berat').invalid}">
                           <div class="invalid-feedback">
                             <small id="berat" class="form-text text-danger">berat is required!</small>
                           </div>
                       </div>
                     <div class="mt-5">
-                        <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!formGroup.valid">Add item</button> 
+                        <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!formGroup.valid">Edit item</button> 
                     </div>
                   </form>
             </div>

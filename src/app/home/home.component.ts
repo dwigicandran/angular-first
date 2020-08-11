@@ -13,18 +13,24 @@ export class HomeComponent implements OnInit {
   constructor(private itemService : ItemService, private router: Router) { }
 
   ngOnInit(): void {
-    this.itemService.getAllItems().subscribe(
-      
-      res => this.items = res,
-      err => console.log(err)
-    )
+    this.reloadData()
+    
   }
 
   addItem(){
     this.router.navigate(['/addItem'])
   }
+
   detailItem(id: string){
     this.router.navigate(['detailItem', id]);
+  }
+
+  reloadData(){
+    this.itemService.getAllItems().subscribe(
+      
+      res => this.items = res,
+      err => console.log(err)
+    )
   }
 
 }

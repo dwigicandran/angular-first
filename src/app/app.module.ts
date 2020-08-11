@@ -16,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AddItemComponent } from './home/add-item/add-item.component';
 import { DetailItemComponent } from './home/detail-item/detail-item.component';
+import { EditItemComponent } from './home/edit-item/edit-item.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DetailItemComponent } from './home/detail-item/detail-item.component';
     RegisterComponent,
     HomeComponent,
     AddItemComponent,
-    DetailItemComponent
+    DetailItemComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,

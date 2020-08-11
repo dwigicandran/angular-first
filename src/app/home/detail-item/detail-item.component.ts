@@ -27,4 +27,23 @@ export class DetailItemComponent implements OnInit {
       }, error => console.log(error));
   }
 
+  delete(id:string){
+    this.itemService.deleteItem(id)
+    .subscribe(
+      result => {
+        if(result.success){
+          console.log(result)
+          alert("data berhasil dihapus")
+          this.router.navigate(['/home'])
+        } else{
+          // alert (result.message)
+          alert("data gagal dihapus")
+        }
+      });
+  }
+
+  edit(id:string){
+    this.router.navigate(['editItem',id])
+  }
+
 }

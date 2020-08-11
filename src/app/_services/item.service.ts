@@ -21,7 +21,15 @@ export class ItemService {
     return this.http.post(`${ baseUrl }item`,data);
   }
 
-  getItemById(id: string): Observable<any>{
+  getItemById(id: string):Observable<any>{
     return this.http.get(`${ baseUrl }item/ById?id=${id}`)
+  }
+  deleteItem(id:string):Observable<any>{
+    console.log("ini delete")
+    return this.http.delete(`${ baseUrl }item?id=${id}`)
+  }
+  editItem(data):Observable<any>{
+    console.log("ini edit")
+    return this.http.put(`${ baseUrl }item`,data);
   }
 }
