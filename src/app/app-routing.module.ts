@@ -1,3 +1,4 @@
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailItemComponent } from './home/detail-item/detail-item.component';
 import { AddItemComponent } from './home/add-item/add-item.component';
 import { HomeComponent } from './home/home.component';
@@ -9,6 +10,9 @@ import { Halaman2Component } from './halaman2/halaman2.component';
 import { Halaman3Component } from './halaman3/halaman3.component';
 import { LoginComponent } from './login/login.component';
 import { EditItemComponent } from './home/edit-item/edit-item.component';
+import { UserComponent } from './user/user.component';
+import { AddUserComponent } from './user/add-user/add-user.component';
+import { DetailUserComponent } from './user/detail-user/detail-user.component';
 
 const routes: Routes = [
   {
@@ -32,12 +36,27 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: "user",
+    component: UserComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "addUser",
+    component: AddUserComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "detailUser/:id",
+    component: DetailUserComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: "",
     component: LoginComponent
   },
   {
-    path: "hal2",
-    component: Halaman2Component,
+    path: "dashboard",
+    component: DashboardComponent,
     canActivate: [AuthGuard]
   },
   {

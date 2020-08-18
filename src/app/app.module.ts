@@ -17,6 +17,11 @@ import { HomeComponent } from './home/home.component';
 import { AddItemComponent } from './home/add-item/add-item.component';
 import { DetailItemComponent } from './home/detail-item/detail-item.component';
 import { EditItemComponent } from './home/edit-item/edit-item.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserComponent } from './user/user.component';
+import { AddUserComponent } from './user/add-user/add-user.component';
+import { DetailUserComponent } from './user/detail-user/detail-user.component';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,12 @@ import { EditItemComponent } from './home/edit-item/edit-item.component';
     HomeComponent,
     AddItemComponent,
     DetailItemComponent,
-    EditItemComponent
+    EditItemComponent,
+    DashboardComponent,
+    UserComponent,
+    AddUserComponent,
+    DetailUserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

@@ -17,10 +17,6 @@ export class AppComponent {
     this.router.navigate(['home'])
     // alert("hello This is Page 1")
   }
-  page2(){
-    this.router.navigate(['hal2'])
-    // alert("hello This is Page 2")
-  }
   page3(){
     this.router.navigate(['hal3'])
     // alert("hello This is Page 3")

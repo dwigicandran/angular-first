@@ -36,7 +36,9 @@ export class LoginComponent implements OnInit {
         if(result.success){
           console.log(result)
           console.log(result.token)
+          console.log(result.record.id)
           localStorage.setItem('token',result.token)
+          localStorage.setItem('id',result.record.id)
           this.router.navigate(['/home'])
         } else{
           // alert (result.message)
