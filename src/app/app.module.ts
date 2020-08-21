@@ -5,8 +5,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Halaman1Component } from './halaman1/halaman1.component';
-import { Halaman2Component } from './halaman2/halaman2.component';
 import { Halaman3Component } from './halaman3/halaman3.component';
 import { LoginComponent } from './login/login.component';
 import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
@@ -22,12 +20,15 @@ import { UserComponent } from './user/user.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { DetailUserComponent } from './user/detail-user/detail-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { EditUserDashComponent } from './dashboard/edit-user-dash/edit-user-dash.component';
+import { EditDetailDashComponent } from './dashboard/edit-detail-dash/edit-detail-dash.component';
+import { AddDetailDashComponent } from './dashboard/add-detail-dash/add-detail-dash.component';
+import { EditDetailComponent } from './user/edit-detail/edit-detail.component';
+import { AddDetailComponent } from './user/add-detail/add-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Halaman1Component,
-    Halaman2Component,
     Halaman3Component,
     LoginComponent,
     RegisterComponent,
@@ -39,7 +40,12 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
     UserComponent,
     AddUserComponent,
     DetailUserComponent,
-    EditUserComponent
+    EditUserComponent,
+    EditUserDashComponent,
+    EditDetailDashComponent,
+    AddDetailDashComponent,
+    EditDetailComponent,
+    AddDetailComponent
   ],
   imports: [
     BrowserModule,

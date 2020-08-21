@@ -1,3 +1,7 @@
+import { AddDetailDashComponent } from './dashboard/add-detail-dash/add-detail-dash.component';
+import { EditDetailDashComponent } from './dashboard/edit-detail-dash/edit-detail-dash.component';
+import { EditUserDashComponent } from './dashboard/edit-user-dash/edit-user-dash.component';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailItemComponent } from './home/detail-item/detail-item.component';
 import { AddItemComponent } from './home/add-item/add-item.component';
@@ -6,13 +10,15 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './_guard/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Halaman2Component } from './halaman2/halaman2.component';
 import { Halaman3Component } from './halaman3/halaman3.component';
 import { LoginComponent } from './login/login.component';
 import { EditItemComponent } from './home/edit-item/edit-item.component';
 import { UserComponent } from './user/user.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { DetailUserComponent } from './user/detail-user/detail-user.component';
+import { EditDetailComponent } from './user/edit-detail/edit-detail.component';
+import { AddDetailComponent } from './user/add-detail/add-detail.component';
+
 
 const routes: Routes = [
   {
@@ -51,8 +57,19 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: "",
-    component: LoginComponent
+    path: "editUser/:id",
+    component: EditUserComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "editDetail/:id",
+    component: EditDetailComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "addDetail/:id",
+    component: AddDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "dashboard",
@@ -60,9 +77,28 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: "editUserDash/:id",
+    component: EditUserDashComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "addDetailDash/:id",
+    component: AddDetailDashComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "editDetailDash/:id",
+    component: EditDetailDashComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: "hal3",
     component: Halaman3Component,
     canActivate: [AuthGuard]
+  },
+  {
+    path: "",
+    component: LoginComponent
   },
   {
     path: "register",

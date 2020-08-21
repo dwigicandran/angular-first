@@ -30,9 +30,7 @@ export class UserComponent implements OnInit {
   detailUser(id: string){
     this.router.navigate(['detailUser', id]);
   }
-  editUser(id: string){
-    this.router.navigate(['editUser', id]);
-  }
+
   deleteUser(id:string){
     this.userService.deleteUser(id)
     .subscribe(

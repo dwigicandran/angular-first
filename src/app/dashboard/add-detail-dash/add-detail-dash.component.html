@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="col-md-11">
+        <div class="card card-container mb-5">
+            <div class="card-header text-center">
+                <h4>Add Detail User</h4>
+            </div>
+
+            <div class="card-body">
+                <form class="addItem-form" [formGroup]="formGroup" (ngSubmit)="addDetail()">
+                    <div class="form-group">
+                        <label for="alamat">Address</label>
+                        <input type="text" class="form-control" id="alamat" formControlName="alamat" [ngClass]="{'is-invalid': formGroup.get('alamat').touched && formGroup.get('alamat').invalid}">
+                          <div class="invalid-feedback">
+                            <small id="alamat" class="form-text text-danger">Address is required!</small>
+                            <small id="alamat" class="form-text text-danger">Address min lenght is 6 character !</small>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="phone1">Phone 1</label>
+                        <input type="number" class="form-control" id="phone1" formControlName="phone1" [ngClass]="{'is-invalid': formGroup.get('phone1').touched && formGroup.get('phone1').invalid}">
+                          <div class="invalid-feedback">
+                            <small id="phone1" class="form-text text-danger">Phone 1 is required!</small>
+                          </div>
+                      </div>
+                    <div class="form-group">
+                      <label for="phone2">Phone 2</label>
+                      <input type="number" class="form-control" id="phone2" formControlName="phone2" [ngClass]="{'is-invalid': formGroup.get('phone2').touched && formGroup.get('phone2').invalid}">
+                        <div class="invalid-feedback">
+                          <small id="phone2" class="form-text text-danger">Phone 2 is required!</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="type">Type</label>
+                      <input type="text" class="form-control" id="type" formControlName="type" [ngClass]="{'is-invalid': formGroup.get('type').touched && formGroup.get('type').invalid}">
+                        <div class="invalid-feedback">
+                          <small id="type" class="form-text text-danger">Type is required!</small>
+                        </div>
+                    </div>
+                      <div class="form-group">
+                        <label for="jenis_kelamin">Gender</label>
+                        <select class="form-control" formControlName="jenis_kelamin" [ngClass]="{'is-invalid': formGroup.get('jenis_kelamin').touched && formGroup.get('jenis_kelamin').invalid}">
+                          <option value="laki-laki">Laki-laki</option>
+                          <option value="perempuan">Perempuan</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          <small id="jenis_kelamin" class="form-text text-danger">Gender is required!</small>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="kode_pos">Pos Code</label>
+                        <input type="number" class="form-control" id="kode_pos" formControlName="kode_pos" [ngClass]="{'is-invalid': formGroup.get('kode_pos').touched && formGroup.get('kode_pos').invalid}">
+                          <div class="invalid-feedback">
+                            <small id="kode_pos" class="form-text text-danger">Pos code is required!</small>
+                          </div>
+                      </div>
+                    <div class="mt-5">
+                        <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!formGroup.valid">Add Detail User</button> 
+                    </div>
+                  </form>
+            </div>
+
+      </div>
+    </div>
+</div>
+    

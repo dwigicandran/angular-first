@@ -1,1 +1,76 @@
-<p>edit-user works!</p>
+<div class="container">
+    <div class="col-md-11">
+        <div class="card card-container mb-5">
+            <div class="card-header text-center">
+                <h4>Edit User</h4>
+            </div>
+
+            <div class="card-body" *ngIf="user">
+                <form class="register-form" [formGroup]="formGroup" (ngSubmit)="editUser()">
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" formControlName="id" id="id" value="{{user.id}}">
+                      </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" value="{{user.username}}" id="username" formControlName="username" [ngClass]="{'is-invalid': formGroup.get('username').touched && formGroup.get('username').invalid}">
+                          <div class="invalid-feedback">
+                            <small id="username" class="form-text text-danger">Username is required!</small>
+                            <small id="username" class="form-text text-danger">Username min lenght is 6 character !</small>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" value="{{user.name}}" id="name" formControlName="name" [ngClass]="{'is-invalid': formGroup.get('name').touched && formGroup.get('name').invalid}">
+                          <div class="invalid-feedback">
+                            <small id="name" class="form-text text-danger">Full name is required!</small>
+                          </div>
+                      </div>
+                    <div class="form-group">
+                      <label for="email">Email address</label>
+                      <input type="email" class="form-control" value="{{user.email}}" id="email" formControlName="email" [ngClass]="{'is-invalid': formGroup.get('email').touched && formGroup.get('email').invalid}">
+                        <div class="invalid-feedback">
+                          <small id="email" class="form-text text-danger">Email is required!</small>
+                          <small id="email" class="form-text text-danger">Enter the valid email!</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" id="password" value="{{user.password}}" formControlName="password" [ngClass]="{'is-invalid': formGroup.get('password').touched && formGroup.get('password').invalid}">
+                        <div class="invalid-feedback">
+                          <small id="password" class="form-text text-danger">Password is required!</small>
+                          <small id="username" class="form-text text-danger">Password min lenght is 4 character !</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select class="form-control" value="{{user.role}}" formControlName="role" [ngClass]="{'is-invalid': formGroup.get('role').touched && formGroup.get('role').invalid}">
+                          <option value="admin">admin</option>
+                          <option value="user">user</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          <small id="role" class="form-text text-danger">role is required!</small>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-control">
+                          <div class="form-group form-check">
+                            <input type="checkbox" value="{{user.active}}" class="form-check-input" id="active" formControlName="active" [ngClass]="{'is-invalid': formGroup.get('active').touched && formGroup.get('active').invalid}">
+                            <label class="form-check-label" for="active">Active</label>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="mt-5">
+                        <button type="submit" class="btn btn-outline-primary btn-block" [disabled]="!formGroup.valid">Edit User</button> 
+                    </div>
+                  </form>
+            </div>
+
+            <div class="card-footer text-center">
+                <div class="mt-1">
+                    <button type="button" class="btn btn-link" (click)="dashboard()">Back Here!</button>
+                </div>
+            </div>
+      </div>
+    </div>
+</div>
+    

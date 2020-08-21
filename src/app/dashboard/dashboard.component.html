@@ -38,39 +38,47 @@
       </li>
     </ul>
 
-    <a href="#" class="btn btn-primary btn-block">Edit</a>
+    <button class="btn btn-primary btn-block"(click)="edit(user.id)">Edit</button>
   </div>
   <!-- /.card-body -->
 </div>
 <!-- /.card -->
 
+<div class="mt-4 mb-5 text-center" *ngIf="!detailUser">
+  <button type="button" class="btn btn-success btn-block" (click)="addDetail(user.id)">Add New Detail User</button>
+</div>
+
 <!-- About Me Box -->
-<div class="card card-primary">
+<div class="card card-primary mt-3 mb-3" *ngIf="detailUser">
   <div class="card-header">
     <h3 class="card-title">About Me</h3>
   </div>
-  <!-- /.card-header -->
+
   <div class="card-body">
-    <strong>Alamat</strong>
+    <strong>Address</strong>
     <p class="text-muted">
-      {{user.detailUser.alamat}}
+      {{detailUser.alamat}}
     </p>
     <hr>
-    <strong>No telephone 1</strong>
-    <p class="text-muted">{{user.detailUser.phone1}}</p>
+    <strong>Phone 1</strong>
+    <p class="text-muted">{{detailUser.phone1}}</p>
     <hr>
-    <strong> No telephone 2</strong>
-    <p class="text-muted">{{user.detailUser.phone2}}</p>
+    <strong> Phone 2</strong>
+    <p class="text-muted">{{detailUser.phone2}}</p>
     <hr>
     <strong>Type</strong>
-    <p class="text-muted">{{user.detailUser.type}}</p>
+    <p class="text-muted">{{detailUser.type}}</p>
     <hr>
-    <strong>Jenis kelamin</strong>
-    <p class="text-muted">{{user.detailUser.jenis_kelamin}}</p>
+    <strong>Gender</strong>
+    <p class="text-muted">{{detailUser.jenis_kelamin}}</p>
     <hr>
-    <strong>Kode pos</strong>
-    <p class="text-muted">{{user.detailUser.kode_pos}}</p>
+    <strong>Pos Code</strong>
+    <p class="text-muted">{{detailUser.kode_pos}}</p>
     <hr>
+    <button class="btn btn-primary btn-block" (click)="editDetail(user.id)">Edit</button>
+
+    <div class="card-footer">
+      <h3 class="card-title"> </h3>
+    </div>
   </div>
-  <!-- /.card-body -->
 </div>

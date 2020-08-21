@@ -1,7 +1,7 @@
 <h1>List User</h1>
 
 <div class="mt-4">
-    <button type="button" class="btn btn-success" (click)="addUser()">Add New Item</button>
+    <button type="button" class="btn btn-success" (click)="addUser()">Add New User</button>
 </div>
 
 <!-- /.row -->
@@ -49,7 +49,6 @@
                 <td>{{user.active}}</td>
                 <td>
                     <button type="button" class="btn btn-primary btn-sm mr-2" (click)="detailUser(user.id)">detail</button>
-                    <button type="button" class="btn btn-info btn-sm mr-2" (click)="editUser(user.id)">edit</button>
                     <button type="button" class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">delete</button>
                 </td>
               </tr>

@@ -1,15 +1,15 @@
+import { User } from './../../model/user';
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/_services/user.service';
 
 @Component({
-  selector: 'app-edit-user',
-  templateUrl: './edit-user.component.html',
-  styleUrls: ['./edit-user.component.scss']
+  selector: 'app-edit-user-dash',
+  templateUrl: './edit-user-dash.component.html',
+  styleUrls: ['./edit-user-dash.component.scss']
 })
-export class EditUserComponent implements OnInit {
+export class EditUserDashComponent implements OnInit {
 
   id: string;
   user: User;
@@ -49,7 +49,7 @@ export class EditUserComponent implements OnInit {
         if(result.success){
           console.log(this.formGroup.value)
           alert("User Has been edited!")
-          this.router.navigate(['detailUser',this.id])
+          this.router.navigate(['dashboard'])
         } else{
           // alert (result.message)
           alert("Failed edit user")
@@ -59,7 +59,7 @@ export class EditUserComponent implements OnInit {
   }
 
   dashboard(){
-    this.router.navigate(['detailUser',this.id])
+    this.router.navigate(['dashboard'])
   }
-  
+
 }
