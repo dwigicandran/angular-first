@@ -25,6 +25,7 @@ import { EditDetailDashComponent } from './dashboard/edit-detail-dash/edit-detai
 import { AddDetailDashComponent } from './dashboard/add-detail-dash/add-detail-dash.component';
 import { EditDetailComponent } from './user/edit-detail/edit-detail.component';
 import { AddDetailComponent } from './user/add-detail/add-detail.component';
+import { ExpedisiComponent } from './expedisi/expedisi.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AddDetailComponent } from './user/add-detail/add-detail.component';
     EditDetailDashComponent,
     AddDetailDashComponent,
     EditDetailComponent,
-    AddDetailComponent
+    AddDetailComponent,
+    ExpedisiComponent
   ],
   imports: [
     BrowserModule,

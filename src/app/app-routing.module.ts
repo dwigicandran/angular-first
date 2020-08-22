@@ -1,3 +1,4 @@
+import { ExpedisiComponent } from './expedisi/expedisi.component';
 import { AddDetailDashComponent } from './dashboard/add-detail-dash/add-detail-dash.component';
 import { EditDetailDashComponent } from './dashboard/edit-detail-dash/edit-detail-dash.component';
 import { EditUserDashComponent } from './dashboard/edit-user-dash/edit-user-dash.component';
@@ -10,7 +11,6 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './_guard/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Halaman3Component } from './halaman3/halaman3.component';
 import { LoginComponent } from './login/login.component';
 import { EditItemComponent } from './home/edit-item/edit-item.component';
 import { UserComponent } from './user/user.component';
@@ -92,8 +92,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: "hal3",
-    component: Halaman3Component,
+    path: "expedisi",
+    component: ExpedisiComponent,
     canActivate: [AuthGuard]
   },
   {
