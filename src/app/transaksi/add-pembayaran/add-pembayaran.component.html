@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="col-md-11">
+        <div class="card card-container mb-5">
+            <div class="card-header text-center">
+                <h4>Add Pembayaran</h4>
+            </div>
+                <div class="card-body">
+                    <form class="addPembayaran-form" [formGroup]="formGroup" (ngSubmit)="addPembayaran()">
+                        <div class="form-group">
+                            <label for="nama">Nama Bank</label>
+                            <input type="text" class="form-control" id="nama" formControlName="nama" [ngClass]="{'is-invalid': formGroup.get('nama').touched && formGroup.get('nama').invalid}">
+                              <div class="invalid-feedback">
+                                <small id="nama" class="form-text text-danger">Nama is required!</small>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="code">Code Bank</label>
+                            <input type="text" class="form-control" id="code" formControlName="code" [ngClass]="{'is-invalid': formGroup.get('code').touched && formGroup.get('code').invalid}">
+                              <div class="invalid-feedback">
+                                <small id="code" class="form-text text-danger">Code bank is required!</small>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="jenis">Jenis Pembayaran</label>
+                            <input type="text" class="form-control" id="jenis" formControlName="jenis" [ngClass]="{'is-invalid': formGroup.get('jenis').touched && formGroup.get('jenis').invalid}">
+                              <div class="invalid-feedback">
+                                <small id="jenis" class="form-text text-danger">Jenis pembayaran is required!</small>
+                              </div>
+                        </div>
+                        <div class="mt-5">
+                            <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!formGroup.valid">Add Pembayaran</button> 
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <div class="mt-1">
+                        <button type="button" class="btn btn-link" (click)="transaksi()">Back Here!</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

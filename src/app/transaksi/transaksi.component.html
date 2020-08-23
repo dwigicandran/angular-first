@@ -1,0 +1,93 @@
+
+<div class="mt-4">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAddTransaksi">Add New Transaksi</button>
+</div>
+
+<!-- /.row -->
+
+<div class="container mt-3 mb-3">
+      <div class="card">
+        <div class="card-header text-center">
+            <div class="row mx-md-n5">
+                <div class="col px-md-5">
+                    <h3 class="card-title float-left">List Transaksi</h3>
+                </div>
+                <div class="col px-md-5">
+                    <div class="card-tools float-right">
+                        <div class="input-group input-group-sm" style="width: 200px;">
+                          <input type="text" name="table_search" class="form-control float-right" placeholder="Search By Name">
+                          <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+          </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0"  >
+          <table class="table table-hover text-nowrap">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tanggal</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let transaksi of transaksi">
+              <tr>
+                <td>{{transaksi.id}}</td>
+                <td>{{transaksi.tanggal}}</td>
+                <td>Rp. {{transaksi.total}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary btn-sm mr-2" (click)="detailTransaksi(transaksi.id)">detail</button>
+                    <button type="button" class="btn btn-danger btn-sm" (click)="deleteTransaksi(transaksi.id)">delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+  </div>
+  <!-- /.row -->
+
+
+  <!-- Modal Add Transaksi-->
+  <div class="modal fade" id="modalAddTransaksi" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add Transaksi</h5>
+        </div>
+        <div class="modal-body">
+            <!-- form Add Transaksi -->
+            <div class="card-body">
+                <form class="addTransaksi-form" [formGroup]="formGroup" (ngSubmit)="addTransaksi()">
+                        <div class="form-group">
+                            <label for="tanggal">Masukkan tanggal transaksi</label>
+                            <input class="form-control" type="datetime-local" id="tanggal" formControlName="tanggal" [ngClass]="{'is-invalid': formGroup.get('tanggal').touched && formGroup.get('tanggal').invalid}">
+                            <div class="invalid-feedback">
+                                <small id="tanggal" class="form-text text-danger">Tanggal is required!</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="total">Total</label>
+                            <input type="text" class="form-control" id="total" formControlName="total" [ngClass]="{'is-invalid': formGroup.get('total').touched && formGroup.get('total').invalid}">
+                            <div class="invalid-feedback">
+                                <small id="total" class="form-text text-danger">Total is required!</small>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">Save</button>
+                          </div>
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

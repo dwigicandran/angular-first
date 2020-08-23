@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="col-md-11">
+        <div class="card card-container mb-5">
+            <div class="card-header text-center">
+                <h4>Add Expedisi</h4>
+            </div>
+                <div class="card-body">
+                    <form class="addExpedisi-form" [formGroup]="formGroup" (ngSubmit)="addExpedisi()">
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="nama" formControlName="nama" [ngClass]="{'is-invalid': formGroup.get('nama').touched && formGroup.get('nama').invalid}">
+                              <div class="invalid-feedback">
+                                <small id="nama" class="form-text text-danger">Nama is required!</small>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="estimasi">Estimasi</label>
+                            <select class="form-control" formControlName="estimasi" [ngClass]="{'is-invalid': formGroup.get('estimasi').touched && formGroup.get('estimasi').invalid}">
+                              <option value=1>1 Hari</option>
+                              <option value=2>2 Hari</option>
+                              <option value=3>3 Hari</option>
+                              <option value=4>4 Hari</option>
+                              <option value=5>5 Hari</option>
+                              <option value=6>6 Hari</option>
+                              <option value="> 7">lebih dari 7 Hari</option>
+                            </select>
+                            <div class="invalid-feedback">
+                              <small id="estimasi" class="form-text text-danger">Estimasi is required!</small>
+                            </div>
+                          </div>
+                        <div class="form-group">
+                            <label for="harga">Harga</label>
+                            <input type="number" class="form-control" id="harga" formControlName="harga" [ngClass]="{'is-invalid': formGroup.get('harga').touched && formGroup.get('harga').invalid}">
+                              <div class="invalid-feedback">
+                                <small id="harga" class="form-text text-danger">Harga is required!</small>
+                              </div>
+                        </div>
+                        <div class="mt-5">
+                            <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!formGroup.valid">Add Expedisi</button> 
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <div class="mt-1">
+                        <button type="button" class="btn btn-link" (click)="expedisi()">Back Here!</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

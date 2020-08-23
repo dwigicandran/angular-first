@@ -1,0 +1,98 @@
+<h2>Detail Expedisi</h2> 
+
+<div class="card m-3" *ngIf="expedisi">
+    <div class="card-header text-center">
+        <h3 class="card-title">Expedisi</h3>
+    </div>
+    <div class="card-body ml-5">
+        <h5 class="card-text"> Nama : {{expedisi.nama}}</h5>
+        <h5 class="card-text"> Estimasi : {{expedisi.estimasi}}</h5>
+        <h5 class="card-text">Harga : {{expedisi.harga}}</h5>
+        <div class="card-body mx-auto">
+          <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#modalEditExpedisi">Edit Expedisi</button>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4 mb-5 text-center" *ngIf="!kurir">
+    <button type="button" class="btn btn-success btn-block" (click)="addKurir()">Add New Kurir</button>
+  </div>
+
+
+<div class="card m-3" *ngIf="kurir">
+    <div class="card-header text-center">
+        <h3 class="card-title">Kurir</h3>
+    </div>
+    <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="../../assets/profile1.jpg" class="card-img m-2">
+        </div>
+        <div class="col-md-7">
+          <div class="card-body">
+                <h5 class="card-title"> Nama : {{kurir.nama}}</h5>
+                <h6 class="card-title text-muted"> Estimasi : {{kurir.resi}}</h6>
+            <div class="card-body text-center">
+                <button type="button" class="btn btn-info" style="width: 100px; height: 50px;" (click)="editKurir(expedisi.id)">Edit Kurir</button>
+                <button type="button" class="btn btn-danger float-right" style="width: 150px; height: 50px;" (click)="deleteKurir(expedisi.id)">Delete Kurir</button>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+  
+  <!-- Modal edit Expedisi-->
+  <div class="modal fade" id="modalEditExpedisi" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Edit Expedisi</h5>
+        </div>
+        <div class="modal-body">
+            <!-- form edit expedisi -->
+            <div class="card-body">
+                <form class="register-form" [formGroup]="formGroup" (ngSubmit)="edit()">
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" formControlName="id" id="id" value="{{expedisi.id}}">
+                      </div>
+                        <div class="form-group">
+                            <label for="nama">nama</label>
+                            <input type="text" class="form-control" value="{{expedisi.nama}}" id="nama" formControlName="nama" [ngClass]="{'is-invalid': formGroup.get('nama').touched && formGroup.get('nama').invalid}">
+                            <div class="invalid-feedback">
+                                <small id="nama" class="form-text text-danger">nama is required!</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="estimasi">Estimasi</label>
+                            <select class="form-control" value="{{expedisi.estimasi}}" formControlName="estimasi" [ngClass]="{'is-invalid': formGroup.get('estimasi').touched && formGroup.get('estimasi').invalid}">
+                              <option value=1>1 Hari</option>
+                              <option value=2>2 Hari</option>
+                              <option value=3>3 Hari</option>
+                              <option value=4>4 Hari</option>
+                              <option value=5>5 Hari</option>
+                              <option value=6>6 Hari</option>
+                              <option value="> 7">lebih dari 7 Hari</option>
+                            </select>
+                            <div class="invalid-feedback">
+                              <small id="estimasi" class="form-text text-danger">Estimasi is required!</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="harga">harga</label>
+                            <input type="text" class="form-control" value="{{expedisi.harga}}" id="harga" formControlName="harga" [ngClass]="{'is-invalid': formGroup.get('harga').touched && formGroup.get('harga').invalid}">
+                            <div class="invalid-feedback">
+                                <small id="harga" class="form-text text-danger">harga is required!</small>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary" [disabled]="!formGroup.valid">Save changes</button>
+                          </div>
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

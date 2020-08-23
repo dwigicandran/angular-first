@@ -23,27 +23,27 @@ export class ExpedisiComponent implements OnInit {
     )
   }
 
-  addUser(){
-    this.router.navigate(['/addUser'])
+  addExpedisi(){
+    this.router.navigate(['/addExpedisi'])
   }
 
-  detailUser(id: string){
-    this.router.navigate(['detailUser', id]);
+  detailExpedisi(id: string){
+    this.router.navigate(['detailExpedisi', id]);
   }
 
-  // deleteUser(id:string){
-  //   this.userService.deleteUser(id)
-  //   .subscribe(
-  //     result => {
-  //       if(result.success){
-  //         console.log(result)
-  //         alert("data berhasil dihapus")
-  //         this.reloadData()
-  //       } else{
-  //         // alert (result.message)
-  //         alert("data gagal dihapus")
-  //       }
-  //     });
-  // }
+  deleteExpedisi(id:string){
+    this.expedisiService.deleteExpedisi(id)
+    .subscribe(
+      result => {
+        if(result.success){
+          console.log(result)
+          alert("data berhasil dihapus")
+          this.reloadData()
+        } else{
+          // alert (result.message)
+          alert("data gagal dihapus")
+        }
+      });
+  }
 
 }

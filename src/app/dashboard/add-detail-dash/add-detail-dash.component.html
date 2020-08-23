@@ -6,7 +6,7 @@
             </div>
 
             <div class="card-body">
-                <form class="addItem-form" [formGroup]="formGroup" (ngSubmit)="addDetail()">
+                <form class="addDetail-form" [formGroup]="formGroup" (ngSubmit)="addDetail()">
                     <div class="form-group">
                         <label for="alamat">Address</label>
                         <input type="text" class="form-control" id="alamat" formControlName="alamat" [ngClass]="{'is-invalid': formGroup.get('alamat').touched && formGroup.get('alamat').invalid}">

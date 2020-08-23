@@ -26,6 +26,14 @@ import { AddDetailDashComponent } from './dashboard/add-detail-dash/add-detail-d
 import { EditDetailComponent } from './user/edit-detail/edit-detail.component';
 import { AddDetailComponent } from './user/add-detail/add-detail.component';
 import { ExpedisiComponent } from './expedisi/expedisi.component';
+import { AddExpedisiComponent } from './expedisi/add-expedisi/add-expedisi.component';
+import { DetailExpedisiComponent } from './expedisi/detail-expedisi/detail-expedisi.component';
+import { AddKurirComponent } from './expedisi/add-kurir/add-kurir.component';
+import { EditKurirComponent } from './expedisi/edit-kurir/edit-kurir.component';
+import { TransaksiComponent } from './transaksi/transaksi.component';
+import { DetailTransaksiComponent } from './transaksi/detail-transaksi/detail-transaksi.component';
+import { AddPembayaranComponent } from './transaksi/add-pembayaran/add-pembayaran.component';
+import { EditPembayaranComponent } from './transaksi/edit-pembayaran/edit-pembayaran.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +55,15 @@ import { ExpedisiComponent } from './expedisi/expedisi.component';
     AddDetailDashComponent,
     EditDetailComponent,
     AddDetailComponent,
-    ExpedisiComponent
+    ExpedisiComponent,
+    AddExpedisiComponent,
+    DetailExpedisiComponent,
+    AddKurirComponent,
+    EditKurirComponent,
+    TransaksiComponent,
+    DetailTransaksiComponent,
+    AddPembayaranComponent,
+    EditPembayaranComponent
   ],
   imports: [
     BrowserModule,

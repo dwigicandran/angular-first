@@ -1,3 +1,10 @@
+import { AddPembayaranComponent } from './transaksi/add-pembayaran/add-pembayaran.component';
+import { DetailTransaksiComponent } from './transaksi/detail-transaksi/detail-transaksi.component';
+import { TransaksiComponent } from './transaksi/transaksi.component';
+import { EditKurirComponent } from './expedisi/edit-kurir/edit-kurir.component';
+import { AddKurirComponent } from './expedisi/add-kurir/add-kurir.component';
+import { DetailExpedisiComponent } from './expedisi/detail-expedisi/detail-expedisi.component';
+import { AddExpedisiComponent } from './expedisi/add-expedisi/add-expedisi.component';
 import { ExpedisiComponent } from './expedisi/expedisi.component';
 import { AddDetailDashComponent } from './dashboard/add-detail-dash/add-detail-dash.component';
 import { EditDetailDashComponent } from './dashboard/edit-detail-dash/edit-detail-dash.component';
@@ -18,6 +25,7 @@ import { AddUserComponent } from './user/add-user/add-user.component';
 import { DetailUserComponent } from './user/detail-user/detail-user.component';
 import { EditDetailComponent } from './user/edit-detail/edit-detail.component';
 import { AddDetailComponent } from './user/add-detail/add-detail.component';
+import { EditPembayaranComponent } from './transaksi/edit-pembayaran/edit-pembayaran.component';
 
 
 const routes: Routes = [
@@ -94,6 +102,46 @@ const routes: Routes = [
   {
     path: "expedisi",
     component: ExpedisiComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "addExpedisi",
+    component: AddExpedisiComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "detailExpedisi/:id",
+    component: DetailExpedisiComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "addKurir/:id",
+    component: AddKurirComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "editKurir/:id",
+    component: EditKurirComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "transaksi",
+    component: TransaksiComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "detailTransaksi/:id",
+    component: DetailTransaksiComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "addPembayaran/:id",
+    component: AddPembayaranComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "editPembayaran/:id",
+    component: EditPembayaranComponent,
     canActivate: [AuthGuard]
   },
   {
