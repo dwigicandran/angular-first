@@ -34,6 +34,7 @@ import { TransaksiComponent } from './transaksi/transaksi.component';
 import { DetailTransaksiComponent } from './transaksi/detail-transaksi/detail-transaksi.component';
 import { AddPembayaranComponent } from './transaksi/add-pembayaran/add-pembayaran.component';
 import { EditPembayaranComponent } from './transaksi/edit-pembayaran/edit-pembayaran.component';
+import { KeranjangComponent } from './keranjang/keranjang.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { EditPembayaranComponent } from './transaksi/edit-pembayaran/edit-pembay
     TransaksiComponent,
     DetailTransaksiComponent,
     AddPembayaranComponent,
-    EditPembayaranComponent
+    EditPembayaranComponent,
+    KeranjangComponent
   ],
   imports: [
     BrowserModule,

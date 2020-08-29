@@ -45,5 +45,10 @@ export class DetailItemComponent implements OnInit {
   edit(id:string){
     this.router.navigate(['editItem',id])
   }
+  addToCart(id: string){
+    localStorage.setItem('item',id)
+    alert('item berhasil ditambahkan ke keranjang')
+    this.router.navigate(['keranjang'])
+  }
 
 }

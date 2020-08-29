@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="">
+        <div class="card card-container mb-5">
+            <div class="card-header text-center">
+                <h4>Keranjang Saya</h4>
+            </div>
+
+            <div class="card-body">
+              <div class="card mb-3">
+
+                <div class="row no-gutters">
+                  <div class="col-md-3 m-2" >
+                    <img class="profile-user-img img-fluid img-circle" src="../../assets/profile1.jpg" alt="item" >
+                  </div>
+                  <div class="col-md">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.nama}}</h5>
+                      <p class="card-text">Rp. {{item.harga}}</p>
+                      <p class="card-text">{{item.berat}} g</p>
+                      <div class="">Quantity : 1
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <form name="form">
+
+                <div class="form-group">
+                  <input type="hidden" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="kurir">Pilih Pegiriman</label>
+                  <select class="form-control">
+                    <option value="{{expedisi.id}}" *ngFor="let expedisi of expedisi"> {{expedisi.nama}} - Rp. {{expedisi.harga}} - {{expedisi.estimasi}} hari </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    <small id="kurir" class="form-text text-danger">Harap isi pengiriman!</small>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="transaksi">Pilih Pembayaran</label>
+                  <select class="form-control">
+                    <option value="" >pembayaran</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    <small id="transaksi" class="form-text text-danger">Harap isi pembayaran!</small>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <li class="list-group-item">
+                    <b>
+                        Total Harga
+                    </b> 
+                    <a class="float-right">
+                      Rp. {{item.berat * 17000 + item.harga}}
+                    </a>
+                  </li>
+                </div>
+
+                <div class="mt-5">
+                  <button type="submit" class="btn btn-outline-success btn-block" >Checkout</button> 
+              </div>
+
+              </form>
+
+            </div>
+
+      </div>
+    </div>
+</div>
+
+    

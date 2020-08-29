@@ -1,3 +1,4 @@
+import { KeranjangComponent } from './keranjang/keranjang.component';
 import { AddPembayaranComponent } from './transaksi/add-pembayaran/add-pembayaran.component';
 import { DetailTransaksiComponent } from './transaksi/detail-transaksi/detail-transaksi.component';
 import { TransaksiComponent } from './transaksi/transaksi.component';
@@ -142,6 +143,11 @@ const routes: Routes = [
   {
     path: "editPembayaran/:id",
     component: EditPembayaranComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "keranjang",
+    component: KeranjangComponent,
     canActivate: [AuthGuard]
   },
   {
